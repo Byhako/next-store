@@ -1,14 +1,16 @@
+import { ProductsWrapper } from "app/components/Store/ProductsWrapper"
+
 type CategoryProps = {
   params: { categories: string[] }
   searchParams?: Record<string, string>
 }
 
-export default function Category(props: CategoryProps) {
+export default async function Category(props: CategoryProps) {
+  const response = await fetch('http://localhost:3000/api')
+  const { products } = await response.json()
+
   const { params, searchParams } = props
    return (
-    <>
-      <h1>Categoria {params?.categories}</h1>
-      <h2>{[1,2,3]}</h2>
-    </>
+    <ProductsWrapper products={products} />
    )
 }
