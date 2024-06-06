@@ -5,7 +5,6 @@ type CategoryProps = {
 
 export default function Category(props: CategoryProps) {
   const { params, searchParams } = props
-  console.log('para', searchParams)
    return (
     <>
       <h1>Categoria {params?.categories}</h1>

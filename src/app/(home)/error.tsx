@@ -1,9 +1,7 @@
 'use client'
 
-interface ErrorProps {
-  error: Error
-  reset: () => void
-}
+import { ErrorProps } from "../../../types"
+
 
 export default function Error(props: ErrorProps) {
   return (
