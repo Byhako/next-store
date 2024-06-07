@@ -14,6 +14,8 @@ export const ProductView = ({ product }: ProductViewProps) => {
     router.push('/')
   }
 
+  console.log(product.description)
+
   return (
     <main className={styles.ProductView}>
       <section className={styles.ProductView__images}>
