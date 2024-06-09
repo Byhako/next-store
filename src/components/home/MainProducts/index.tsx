@@ -12,7 +12,7 @@ export const MainProducts = async () => {
       <h3>✨ New products released!</h3>
       <div className={styles.MainProducts__grid}>
         {products?.map((product: Product) => {
-          const imageSrc = product.images[0].src;
+          const imageSrc = product.images[0].src
           return (
             <article key={product.id}>
               <p>{product.title}</p>

@@ -24,6 +24,7 @@ export const useShoppingCart = create<Store>()((set) => ({
 
     return []
   })(),
+
   addToCart: (cartItem: CartItem) => set(
     (state) => {
     const currentCart = state.cart
@@ -43,6 +44,7 @@ export const useShoppingCart = create<Store>()((set) => ({
     saveArrayToLocalStorage([...state.cart, cartItem])
     return ({ cart: [...state.cart, cartItem] })
   }),
+  
   removeCartItem: (cartItem: CartItem) => set((state) => {
     const currentCart = state.cart
     const newCart = currentCart.filter((item) => item.id !== cartItem.id)

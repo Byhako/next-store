@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 import styles from './ProductCard.module.sass'
 
 interface ProductCardInterface {
@@ -24,5 +24,5 @@ export const ProductCard = ({ product }: ProductCardInterface) => {
         <span className={styles.ProductCard__priceTag}>${product.price} USD</span>
       </article>
     </Link>
-  );
-};
+  )
+}

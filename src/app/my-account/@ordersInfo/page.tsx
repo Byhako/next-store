@@ -1,14 +1,14 @@
-import { getCustomerOrders } from "app/services/shopify/graphql/customer";
+import { getCustomerOrders } from "app/services/shopify/graphql/customer"
 import styles from './OrderInfo.module.sass'
 
 type OrderType = {
-  name: string;
-  orderNumber: number;
+  name: string
+  orderNumber: number
   statusUrl: string
   lineItems: {
     edges: Array<{
       node: {
-        currentQuantity: number;
+        currentQuantity: number
         title: 2
       }
     }>
@@ -16,7 +16,7 @@ type OrderType = {
 }
 
 export default async function MyAccountPage() {
-  const ordersInfo = await getCustomerOrders();
+  const ordersInfo = await getCustomerOrders()
   return (
     <div>
       <h2>Your orders</h2>
@@ -37,5 +37,5 @@ export default async function MyAccountPage() {
         ))}
       </section>
     </div>
-  );
+  )
 }

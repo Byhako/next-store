@@ -1,6 +1,6 @@
-'use client';
-import { useChat } from 'ai/react';
-import styles from './Chat.module.sass';
+'use client'
+import { useChat } from 'ai/react'
+import styles from './Chat.module.sass'
 
 export const Chat = (props: { agent: string }) => {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -11,7 +11,7 @@ export const Chat = (props: { agent: string }) => {
         content: props.agent
       }
     ],
-  });
+  })
 
   return (
     <main className={styles.Chat} >
@@ -48,5 +48,5 @@ export const Chat = (props: { agent: string }) => {
           )}
       </section>
     </main>
-  );
+  )
 }

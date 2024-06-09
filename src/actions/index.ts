@@ -14,7 +14,7 @@ export const handleCreateUser = async (formData: FormData) => {
   const variables = {
     input: {
       ...formDataObject,
-      phone: '+52' + formDataObject.phone
+      phone: '+51' + formDataObject.phone
     }
   }
 
@@ -27,6 +27,7 @@ export const handleCreateUser = async (formData: FormData) => {
     }
   } = await graphqlClient.request(createUserMutation, variables)
   const { customer } = customerCreate
+  console.log('customerCreate', customerCreate)
   if (customer?.firstName) {
     await createAccessToken(formDataObject.email as string, formDataObject.password as string)
     redirect('/store')

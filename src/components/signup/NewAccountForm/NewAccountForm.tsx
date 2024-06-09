@@ -1,20 +1,26 @@
-"use client";
-import { useState } from "react";
-import styles from "./NewAccountForm.module.sass";
-import { handleCreateUser } from "app/actions";
+"use client"
+import { useState } from "react"
+import styles from "./NewAccountForm.module.sass"
+import { handleCreateUser } from "app/actions"
 
 export const NewAccountForm = () => {
 
-  const [errors, setErrors] = useState<string[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [errors, setErrors] = useState<string[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
 
   const handleSubmit = async (event: {
-    target: any;
-    preventDefault: () => void;
+    target: any
+    preventDefault: () => void
   }) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    await handleCreateUser(formData)
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const data = Object.values(Object.fromEntries(formData)) ?? ['']
+    if(data.some(d => d === '')) {
+      setErrors(['Todos los campos son obligatorios'])
+      setTimeout(() => {setErrors([])}, 2000)
+    } else {
+      await handleCreateUser(formData)
+    }
   }
 
   return (
@@ -37,5 +43,5 @@ export const NewAccountForm = () => {
         </div>
       }
     </div>
-  );
+  )
 }

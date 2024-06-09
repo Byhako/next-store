@@ -1,4 +1,4 @@
-import { gql } from "graphql-request";
+import { gql } from "graphql-request"
 
 export const customerAccessTokenCreateMutation = gql`
 mutation customerAccessTokenCreate ($email: String!, $password: String!) {

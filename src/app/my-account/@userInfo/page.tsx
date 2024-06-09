@@ -1,9 +1,9 @@
-import { validateAccessToken } from "app/utils/auth/validateAccessToken";
+import { validateAccessToken } from "app/utils/auth/validateAccessToken"
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
 
 export default async function MyAccountPage() {
-  const customer = await validateAccessToken();
+  const customer = await validateAccessToken()
 
   return (
     <div>
@@ -13,5 +13,5 @@ export default async function MyAccountPage() {
         <p>email: {customer?.email}</p>
       </section>
     </div>
-  );
+  )
 }

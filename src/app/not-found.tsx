@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 import styles from 'app/sass/not-found.module.sass'
 
 export default function NotFound() {
@@ -20,5 +20,5 @@ export default function NotFound() {
         ¡Vamos de compras!
       </Link>
     </main>
-  );
+  )
 }

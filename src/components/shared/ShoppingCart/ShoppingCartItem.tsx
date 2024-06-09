@@ -1,7 +1,7 @@
-"use client";
+"use client"
 import Image from 'next/image'
-import { FaRegTrashCan } from "react-icons/fa6";
-import { useShoppingCart } from 'app/hooks/useShoppingCart';
+import { FaRegTrashCan } from "react-icons/fa6"
+import { useShoppingCart } from 'app/hooks/useShoppingCart'
 import styles from './ShoppingCartItem.module.sass'
 
 
@@ -11,7 +11,7 @@ interface ShoppingCartItemProps {
 
 export const ShoppingCartItem = ({ item }: ShoppingCartItemProps) => {
 
-  const { removeCartItem } = useShoppingCart();
+  const { removeCartItem } = useShoppingCart()
 
   return (
     <div className={styles.ShoppingCartItem}>
