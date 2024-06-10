@@ -1,9 +1,6 @@
 'use client'
 
-import { ErrorProps } from "../../../types"
-
-
-export default function Error(props: ErrorProps) {
+export default function Error(props: ErrorPageProps) {
   return (
     <div style={{
       display: 'flex',
