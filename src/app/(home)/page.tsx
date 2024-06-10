@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: 'Welcome to the future world, an ecommerce from other time.'
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <main>
